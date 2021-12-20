@@ -1,24 +1,27 @@
-package com.example.numberswap;
 
 import java.io.*;
 import java.util.Arrays;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import javax.swing.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "home", value = "/homeServlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "home", value = "/homeServlet", urlPatterns = {"/homeServlet"})
+public class HomeServlet extends HttpServlet {
 
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("\"application/x-www-form-urlencoded");
         PrintWriter writer = response.getWriter();
 
         String givenNumber = request.getParameter("givenNumber");
         String output;
 
         if(isInteger(givenNumber)){
-           output = findNext(givenNumber);
+            output = findNext(givenNumber);
         } else{
             output = "Something went wrong, please try again";
         }
@@ -30,7 +33,7 @@ public class HelloServlet extends HttpServlet {
 
     private static boolean isInteger(String number) {
         try {
-            int intValue = Integer.parseInt(number);
+            Integer.parseInt(number);
             return true;
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,"Please input valid Integer");

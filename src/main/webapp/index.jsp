@@ -3,6 +3,20 @@
 <html>
 <head>
     <title>Number Swapper - Simple Java API</title>
+
+    <script>
+        function getNumber(){
+            let givenNumber = document.getElementById("givenNumber").value;
+
+            let postNumber = 'givenNumber=' + givenNumber;
+
+            let ajaxRequest = new XMLHttpRequest();
+            ajaxRequest.open('POST', 'http://localhost:8080/homeServlet/' + givenNumber)
+            ajaxRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            ajaxRequest.send(postNumber);
+
+        }
+    </script>
 </head>
 <body>
 <h1><%= "Number Swapper" %>
@@ -17,7 +31,7 @@
     <label for="givenNumber"> Put any number between 0 and 9223372036854775807 </label>
     <input type="text" name="givenNumber" id="givenNumber"/>
 
-    <input type="submit" value="Try it!"/>
+    <input type="button" value="Try it!" onclick="getNumber()"/>
 </form>
 
 <div id="divOutput"></div>

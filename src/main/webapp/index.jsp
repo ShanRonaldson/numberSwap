@@ -13,13 +13,15 @@
 <h3><%="Insert a number below and if there is a next bigger number composed of the same digits, you will see a new number below it!"%></h3>
 <br/>
 
-<form>
+<form action="${pageContext.request.contextPath}/homeServlet" method="POST">
     <label for="givenNumber"> Put any number between 0 and 9223372036854775807 </label>
     <input type="text" name="givenNumber" id="givenNumber"/>
 
     <input type="submit" value="Try it!"/>
 </form>
 
-<a href="hello-servlet">Greeting</a>
+<div id="divOutput"></div>
+
+<script type="text/javascript" src="js.js"></script>
 </body>
 </html>

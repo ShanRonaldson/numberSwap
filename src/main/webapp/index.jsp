@@ -4,7 +4,7 @@
 <head>
     <title>Number Swapper - Simple Java API</title>
 
-    <script>
+<%--    <script>
         function getNumber(){
             let givenNumber = document.getElementById("givenNumber").value;
 
@@ -16,7 +16,9 @@
             ajaxRequest.send(postNumber);
 
         }
-    </script>
+    </script>--%>
+
+    <script src="js.js"></script>
 </head>
 <body>
 <h1><%= "Number Swapper" %>
@@ -27,7 +29,7 @@
 <h3><%="Insert a number below and if there is a next bigger number composed of the same digits, you will see a new number below it!"%></h3>
 <br/>
 
-<form action="${pageContext.request.contextPath}/homeServlet" method="POST">
+<form method="POST" name="getNumberForm">
     <label for="givenNumber"> Put any number between 0 and 9223372036854775807 </label>
     <input type="text" name="givenNumber" id="givenNumber"/>
 

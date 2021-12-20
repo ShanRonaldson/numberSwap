@@ -1,18 +1,10 @@
 
+function getNumber(){
+    let url = "http://localhost:8080/homeServlet/";
+    let form = document.forms["getNumberForm"];
 
-function main() {
-    fetch("http://localhost:8080/homeServlet/")
-        .then(response => response.json())
-        .then(convertedNumber => showNumber(convertedNumber));
-}
+    let requestParameters = `givenNumber${form["givenNumber"].value}`;
 
-function showNumber(convertedNumber) {
-
-    const divOutput = document.getElementById("divOutput");
-
-    divOutput.innerHTML = convertedNumber;
 
 
 }
-
-main();

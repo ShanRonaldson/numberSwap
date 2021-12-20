@@ -14,7 +14,7 @@ public class HomeServlet extends HttpServlet {
 
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("\"application/x-www-form-urlencoded");
+
         PrintWriter writer = response.getWriter();
 
         String givenNumber = request.getParameter("givenNumber");

@@ -4,7 +4,7 @@
 <head>
     <title>Number Swapper - Simple Java API</title>
 
-<%--    <script>
+ <script>
         function getNumber(){
             let givenNumber = document.getElementById("givenNumber").value;
 
@@ -16,9 +16,9 @@
             ajaxRequest.send(postNumber);
 
         }
-    </script>--%>
+    </script>
 
-    <script src="js.js"></script>
+
 </head>
 <body>
 <h1><%= "Number Swapper" %>
@@ -38,6 +38,5 @@
 
 <div id="divOutput"></div>
 
-<script type="text/javascript" src="js.js"></script>
 </body>
 </html>
